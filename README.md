@@ -42,3 +42,30 @@ In Cycle, **Cycle summary → None** retains every chronological bin at the sele
 ## Empty periods versus missing values
 
 Record count views default to **Empty periods → Gaps**: bins with no entries do not draw points, and lines break at those bins. **Zeros** restores zero marks. This is a display choice after aggregation, normalization, chronological smoothing and any cycle summary; underlying zero counts and calculated statistics are unchanged. Dates and raw counts are retained. Nonempty bins whose transformed value happens to be zero remain visible. Unknown values such as mean duration with no trips are never replaced with zero. Calendar gaps for empty periods are blank, while genuinely missing cells retain their missing-data representation.
+
+## Publish with Cloudflare Pages (GitHub)
+
+The app is a static Vite build with bundled datasets; no backend, secrets, or runtime bindings are required. `.node-version` pins the tested Node version, and `wrangler.jsonc` identifies `dist` as the Pages output directory.
+
+1. Commit and push these changes to `main` in https://github.com/peterbak6/time-vis-explorer.
+2. In Cloudflare, open **Workers & Pages**, create a **Pages** project, and choose **Import an existing Git repository** (Git integration).
+3. Connect GitHub and select `peterbak6/time-vis-explorer`.
+4. Configure the build:
+
+   | Setting | Value |
+   | --- | --- |
+   | Project name | `time-vis-explorer` (or an available name) |
+   | Production branch | `main` |
+   | Framework preset | None (the explicit settings below are sufficient) |
+   | Build command | `npm run build` |
+   | Build output directory | `dist` |
+   | Root directory | Repository root (leave blank) |
+   | Environment variables | None required |
+
+5. Select **Save and Deploy**. Cloudflare supplies the actual `pages.dev` URL when deployment finishes. Later pushes to `main` automatically publish updates; other branches can produce preview deployments.
+
+Use **Pages**, not the Worker creation flow: this setup does not need a Worker deploy command or `npx wrangler deploy`. Cloudflare installs dependencies from the committed package files before building. The data and attribution files in `public/` are copied into `dist/` automatically. No dataset download or preparation command is needed during deployment.
+
+Before pushing, run `npm run build`. The generated `dist/` and local dependencies stay out of Git.
+
+References: [Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/), [build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/), [Node version selection](https://developers.cloudflare.com/pages/configuration/build-image/).
