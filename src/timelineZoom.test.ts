@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import * as d3 from 'd3';
+import {maximumTimeZoom} from './timelineZoom.ts';
+test('zoom rescales only the viewing axis, preserving source timestamps and values',()=>{const points=Object.freeze([{x:Date.UTC(2024,0,1),y:4},{x:Date.UTC(2024,0,2),y:8},{x:Date.UTC(2024,0,3),y:5}].map(p=>Object.freeze(p)));const before=JSON.stringify(points);const base=d3.scaleUtc().domain([points[0].x,points[2].x]).range([40,1040]);const zoomed=d3.zoomIdentity.translate(-400,0).scale(2).rescaleX(base);assert.equal(Number(base.domain()[1])-Number(base.domain()[0]),2*86400000);assert.equal(Number(zoomed.domain()[1])-Number(zoomed.domain()[0]),86400000);assert.equal(JSON.stringify(points),before);assert.equal(points.length,3);});
+test('a panned timeline retains the zoom level and time-bin spacing',()=>{const base=d3.scaleUtc().domain([Date.UTC(2024,0,1),Date.UTC(2024,0,3)]).range([0,1000]);const z=d3.zoomIdentity.scale(4);const p=z.translate(-100,0);const a=z.rescaleX(base),b=p.rescaleX(base);assert.equal(Number(a.domain()[1])-Number(a.domain()[0]),Number(b.domain()[1])-Number(b.domain()[0]));assert.notEqual(+a.domain()[0],+b.domain()[0]);});
+test('zoom limits respect source precision without changing aggregation',()=>{assert.equal(maximumTimeZoom(14*86400000,'day'),7);assert.equal(maximumTimeZoom(86400000,'second'),1024);assert.equal(maximumTimeZoom(365.25*86400000,'year'),1);assert.equal(maximumTimeZoom(0,'hour'),1);});

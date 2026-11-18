@@ -1,0 +1,4 @@
+import {useState} from 'react';
+import ElectricityExplorer from './ElectricityExplorer';
+import RecordExplorer from './RecordExplorer';
+export default function App(){const [dataset,setDataset]=useState('electricity');return <><header><div className="brand"><img className="brand-icon" src={import.meta.env.BASE_URL+'clock.svg'} alt="" width="27" height="27"/><h1>Time Vis Explorer</h1></div><label className="dataset-picker"><span>DATASET</span><select aria-label="Dataset" value={dataset} onChange={e=>setDataset(e.target.value)}><option value="electricity">Electricity consumption</option><option value="news">News timelines</option><option value="people">Notable lifespans</option><option value="bikes">Bike trips</option></select></label></header>{dataset==='electricity'?<ElectricityExplorer/>:<RecordExplorer key={dataset} id={dataset}/>}</>}
