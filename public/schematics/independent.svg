@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="38" viewBox="690 65 465 290">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#373335" /></marker>
+      <marker id="arrowAccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#D94722" /></marker>
+    </defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill:#373335; }
+      .head { font-size:28px; font-weight:700; }
+      .label { font-size:22px; }
+      .small { font-size:18px; }
+      .tiny { font-size:15px; }
+      .axis { fill:none; stroke:#373335; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+      .muted { fill:none; stroke:#CFCFCF; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+      .accent { fill:none; stroke:#D94722; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+    </style>
+    
+  <path d="M85 175 V75 M85 175 H530 M85 345 V245 M85 345 H530" stroke="#CFCFCF" stroke-width="3" fill="none" />
+  <path d="M 110 151 L 202 122.5 L 294 136.75 L 386 94 L 478 113" fill="none" stroke="#373335" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /><path d="M 110 336.2 L 202 334.3 L 294 335.25 L 386 331.45 L 478 332.4" fill="none" stroke="#D94722" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M700 175 V75 M700 175 H1145 M700 345 V245 M700 345 H1145" stroke="#CFCFCF" stroke-width="3" fill="none" />
+  <path d="M 725 151 L 817 122.5 L 909 136.75 L 1001 94 L 1093 113" fill="none" stroke="#373335" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /><path d="M 725 321 L 817 283 L 909 297.25 L 1001 254.5 L 1093 264" fill="none" stroke="#D94722" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>

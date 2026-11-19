@@ -25,3 +25,14 @@
 .measurement-bar .segments button{padding:9px 14px;font-size:12px;border:1px solid var(--border);background:#fff}
 .measurement-bar .segments button.active{border-color:var(--accent);background:#fceee7}
 @media(max-width:760px){.measurement-bar{margin-bottom:16px}.measurement-bar .segments button{padding:8px 10px}}
+
+/* Compact course schematics: labels remain visible and accessible. */
+header{height:64px;padding:0 22px}h1{font-size:20px}.workspace{grid-template-columns:268px minmax(0,1fr);min-height:calc(100vh - 64px)}
+aside{padding:18px 16px}aside fieldset{margin-bottom:14px}aside legend{font-size:12px;margin-bottom:6px}.eyebrow{font-size:10px;margin-bottom:9px}
+.cards{gap:5px}.cards button{height:58px;font-size:10px;padding:4px}.cards svg{height:30px}
+aside .segments{gap:4px}aside .segments button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 3px;font-size:10px;white-space:normal;line-height:1.15;min-height:49px}
+.control-schematic{display:block;width:100%;max-width:69px;height:25px;object-fit:contain}.choice button:disabled .control-schematic{opacity:.65}
+.slider-control{font-size:11px;margin-top:8px;gap:4px}.slider-control input{margin:2px 0}.panel-foot{margin-top:18px;font-size:10px}
+main{padding:21px 24px}.selection{gap:18px;margin-bottom:18px}.measurement-bar{margin-bottom:13px}.measurement-bar .segments button{font-size:11px;padding:7px 11px}.building{padding:5px 8px}.building span{font-size:11px}.building small{font-size:8px}.date-inputs{padding:7px}.date-inputs input{font-size:11px}.chart-heading{padding:18px 21px 8px}.chart-heading h2{font-size:20px}.chart-heading p{font-size:11px}
+@media(min-width:1500px){.workspace{grid-template-columns:280px minmax(0,1fr)}main{padding:24px 28px}}
+@media(max-width:760px){header{height:auto;min-height:62px}.workspace{grid-template-columns:1fr}aside{padding:14px;gap:12px}aside fieldset{margin:0}main{padding:16px 12px}}

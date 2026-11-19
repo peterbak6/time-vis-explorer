@@ -1,0 +1,1 @@
+Control schematics adapted from the BGU Time Visualization class material. Absolute/Index and Shared/Independent preserve cropped geometry from Match View to Question figures 18 and 20; remaining compact SVGs use the same charcoal, orange, and gray visual grammar. Labels live in the accessible HTML controls.
