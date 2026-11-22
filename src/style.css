@@ -36,3 +36,14 @@ aside .segments{gap:4px}aside .segments button{display:flex;flex-direction:colum
 main{padding:21px 24px}.selection{gap:18px;margin-bottom:18px}.measurement-bar{margin-bottom:13px}.measurement-bar .segments button{font-size:11px;padding:7px 11px}.building{padding:5px 8px}.building span{font-size:11px}.building small{font-size:8px}.date-inputs{padding:7px}.date-inputs input{font-size:11px}.chart-heading{padding:18px 21px 8px}.chart-heading h2{font-size:20px}.chart-heading p{font-size:11px}
 @media(min-width:1500px){.workspace{grid-template-columns:280px minmax(0,1fr)}main{padding:24px 28px}}
 @media(max-width:760px){header{height:auto;min-height:62px}.workspace{grid-template-columns:1fr}aside{padding:14px;gap:12px}aside fieldset{margin:0}main{padding:16px 12px}}
+
+/* Desktop: the control panel and the view scroll independently; the page itself does not scroll. */
+@media(min-width:761px){
+  html,body,#root{height:100%}
+  body{overflow:hidden}
+  .workspace{height:calc(100dvh - 64px);min-height:0}
+  aside,main{overflow-y:auto;overscroll-behavior:contain;min-height:0}
+}
+
+/* Credit line at the foot of the control panel. */
+.data-source-link{font-size:10px;line-height:1.6;color:#918b85;margin:6px 0 0}
