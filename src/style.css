@@ -3,11 +3,10 @@
 /* Wrappers keep disabled choices discoverable by pointer and keyboard. */
 .choice{position:relative;display:flex;min-width:0;flex:1}
 .choice>button{width:100%;flex:1}
-.choice[data-hint]{cursor:help}
-.choice[data-hint]>button{pointer-events:none}
-.choice[data-hint]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:5px}
-.choice[data-hint]::after{content:attr(data-hint);display:none;position:absolute;z-index:20;left:0;bottom:calc(100% + 9px);width:230px;padding:10px 12px;border-radius:6px;background:#373335;color:white;font-size:12px;line-height:1.5;font-weight:400;box-shadow:0 3px 12px #0002;pointer-events:none}
-.choice[data-hint]:hover::after,.choice[data-hint]:focus::after{display:block}
+.choice[data-disabled]{cursor:help}
+.choice[data-disabled]>button{pointer-events:none}
+.choice[data-disabled]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:5px}
+.control-tooltip{position:fixed;z-index:2147483647;width:320px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:auto;padding:12px 14px;border-radius:7px;background:#373335;color:#fff;font-size:14px;line-height:1.5;font-weight:400;box-shadow:0 4px 18px #0003;pointer-events:none;overflow-wrap:break-word}
 
 .dataset-picker{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:10px;letter-spacing:1px}.dataset-picker select,.measure-select{font:inherit;font-size:13px;color:#373335;border:1px solid var(--border);background:white;border-radius:6px;padding:9px 28px 9px 10px;letter-spacing:0}.measure-select{width:100%;padding-right:8px;font-size:12px}.record-tooltip{width:280px;max-height:min(380px,calc(100% - 12px));overflow:hidden}.record-tooltip small{line-height:1.6;color:#625d58}.building-list .building:only-child{grid-column:auto}@media(max-width:760px){header{height:auto;min-height:70px;gap:12px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.dataset-picker{gap:7px}.dataset-picker select{font-size:12px;padding:7px}.dataset-picker>span{display:none}.record-tooltip{width:260px}}
 
